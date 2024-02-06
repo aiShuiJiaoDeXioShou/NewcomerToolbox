@@ -1,0 +1,5 @@
+dataUrl=jdbc:mysql://localhost:3306/?useSSL=false&serverTimezone=UTC
+dataUserName=root
+dataPassword=root
+basePath=D:\App\eclipse-workspace\NewcomerToolbox\
+databaseComboBox=chat
