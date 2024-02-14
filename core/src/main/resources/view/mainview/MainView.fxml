@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="root" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newcomertoolbox.view.mainview.MainView">
+   <left>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="left_pane">
+               <children>
+                  <Pane layoutY="6.0" prefHeight="54.0" prefWidth="182.0" styleClass="titlePane">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../static/image/Tools.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="65.0" layoutY="8.0" prefHeight="24.0" prefWidth="95.0" styleClass="title" text="Tools">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <FlowPane fx:id="menusBox" layoutY="60.0" orientation="VERTICAL" prefHeight="595.0" prefWidth="200.0" styleClass="menusBox" />
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="44.0" prefWidth="200.0" styleClass="settingMenu" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="21.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../static/image/setting.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="9.0" prefHeight="24.0" prefWidth="90.0" text="设置" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </left>
+</BorderPane>

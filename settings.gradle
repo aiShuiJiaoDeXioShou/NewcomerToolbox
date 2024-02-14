@@ -1,1 +1,6 @@
 rootProject.name = "NewcomerToolbox"
+include 'comm'
+include 'core'
+include 'logic'
+include 'component'
+

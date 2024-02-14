@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="200.0" styleClass="root" stylesheets="@MenuItem.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newcomertoolbox.view.mainview.part.Menu">
    <children>
-      <ImageView fx:id="labelImage" fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="menuLabel" layoutX="149.0" layoutY="28.0" prefHeight="54.0" prefWidth="160.0" text="Label">
+      <ImageView fx:id="labelImage" fitHeight="26.0" fitWidth="25.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../static/image/youxiji.png" />
+         </image></ImageView>
+      <Label fx:id="menuLabel" layoutX="57.0" prefHeight="40.0" prefWidth="142.0" text="Label" textFill="WHITE">
          <font>
-            <Font size="32.0" />
+            <Font size="14.0" />
          </font></Label>
    </children>
 </Pane>

@@ -1,0 +1,10 @@
+.root-box {
+    -fx-padding: 10;
+}
+
+.app-box {
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-background-color: #f1f3f5;
+    -fx-padding: 10;
+}

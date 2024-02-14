@@ -3,11 +3,11 @@ package com.example.newcomertoolbox.task;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Task {
+public class AppTask {
     public enum TaskEnum {
         START, END, ERROR
     }
-    public static final HashMap<TaskEnum, ArrayList<Runnable>> tasks = new HashMap<>();
+    private static final HashMap<TaskEnum, ArrayList<Runnable>> tasks = new HashMap<>();
 
     public static void add(TaskEnum taskEnum, Runnable task) {
         if (tasks.containsKey(taskEnum)) {

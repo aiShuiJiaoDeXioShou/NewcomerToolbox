@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="708.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newcomertoolbox.view.jdkmanage.JdkManage">
+   <children>
+      <TableView layoutX="14.0" layoutY="14.0" prefHeight="315.0" prefWidth="415.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="jdk名称" />
+          <TableColumn prefWidth="75.0" text="版本" />
+            <TableColumn prefWidth="75.0" text="位置" />
+            <TableColumn prefWidth="188.0" text="操作" />
+        </columns>
+      </TableView>
+      <VBox layoutX="436.0" layoutY="14.0" prefHeight="315.0" prefWidth="404.0">
+         <children>
+            <Label text="Java新闻" />
+            <ListView prefHeight="390.0" prefWidth="517.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="14.0" layoutY="339.0" prefHeight="344.0" prefWidth="415.0">
+         <children>
+            <Label text="下载jdk" />
+            <TableView prefHeight="320.0" prefWidth="512.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="436.0" layoutY="360.0" prefHeight="315.0" prefWidth="431.0">
+         <children>
+            <Label text="Java开发工具箱" />
+            <ListView prefHeight="390.0" prefWidth="517.0" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -1,47 +1,52 @@
 package com.example.newcomertoolbox.logic;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class EnvironmentChecker {
-
-    public static void main(String[] args) {
-        checkMySQL();
-        checkJDK();
-        checkNodeJS();
-    }
-
-    private static void checkMySQL() {
-        if (isCommandAvailable("mysql")) {
-            System.out.println("MySQL is installed.");
+    public static String checkMySQL() {
+        String version = getCommandOutput("mysql --version");
+        if (!version.isEmpty()) {
+            return "Installed. Version: " + version;
         } else {
-            System.out.println("MySQL is not installed.");
+            return "Not installed.";
         }
     }
 
-    private static void checkJDK() {
-        if (System.getProperty("java.home").toLowerCase().contains("jdk")) {
-            System.out.println("JDK is installed.");
+    public static String checkJDK() {
+        String version = System.getProperty("java.version");
+        if (version != null) {
+            return "Installed. Version: " + version;
         } else {
-            System.out.println("JDK is not installed.");
+            return "Not installed.";
         }
     }
 
-    private static void checkNodeJS() {
-        if (isCommandAvailable("node")) {
-            System.out.println("Node.js is installed.");
+    public static String checkNodeJS() {
+        String version = getCommandOutput("node --version");
+        if (!version.isEmpty()) {
+            return "Installed. Version: " + version;
         } else {
-            System.out.println("Node.js is not installed.");
+            return "Not installed.";
         }
     }
 
-    private static boolean isCommandAvailable(String command) {
+    private static String getCommandOutput(String command) {
         try {
-            Process process = new ProcessBuilder(command, "--version").start();
+            Process process = new ProcessBuilder("bash", "-c", command).start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            StringBuilder output = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                output.append(line);
+            }
             int exitCode = process.waitFor();
-            return exitCode == 0;
+            if (exitCode == 0) {
+                return output.toString().trim();
+            }
         } catch (Exception e) {
-            return false;
+            e.printStackTrace();
         }
+        return "";
     }
 }
-
